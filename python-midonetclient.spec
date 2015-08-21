@@ -1,5 +1,5 @@
 %global vendor  MidoNet
-%global srcname python-midonetclient
+%global srcname midonetclient
 
 Name:           %{srcname}
 Version:        XXX
@@ -8,7 +8,7 @@ Summary:        %{vendor} MidoNet CLI
 
 License:        ASL 2.0
 URL:            https://www.midonet.org/
-Source0:        https://github.com/midonet/%{srcname}/archive/%{version}.tar.gz#/%{srcname}-%{version}.tar.gz
+Source0:        https://github.com/midonet/python-%{srcname}/archive/%{version}.tar.gz#/%{srcname}-%{version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  python2-devel
@@ -30,7 +30,7 @@ PBR_VERSION="%{version}" SKIP_PIP_INSTALL=1 %{__python2} setup.py install --skip
 
 %files
 %license LICENSE
-%{python2_sitelib}/midonet
+%{python2_sitelib}/midonetclient
 %{python2_sitelib}/midonetclient-%{version}-py%{python2_version}.egg-info
 
 %changelog
