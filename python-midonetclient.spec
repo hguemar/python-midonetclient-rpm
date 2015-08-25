@@ -4,7 +4,7 @@
 Name:           python-%{srcname}
 Version:        XXX
 Release:        XXX
-Summary:        %{srcvendor} MidoNet CLI
+Summary:        %{srcvendor} CLI
 
 License:        ASL 2.0
 URL:            https://www.midonet.org/
@@ -17,7 +17,7 @@ Requires:       python-httplib2
 Requires:       python-webob
 
 %description
-This package provides %{srcvendor} Command Line Interface
+%{srcvendor} Command Line Interface
 
 %prep
 %setup -q -n %{srcname}-%{upstream_version}
