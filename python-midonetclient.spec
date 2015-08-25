@@ -1,10 +1,10 @@
-%global vendor  MidoNet
+%global srcvendor  MidoNet
 %global srcname midonetclient
 
 Name:           python-%{srcname}
 Version:        XXX
 Release:        XXX
-Summary:        %{vendor} MidoNet CLI
+Summary:        %{srcvendor} CLI
 
 # midonet-cli is GPLv3 licensed, the rest ASL 2.0
 License:        ASL 2.0 and GPLv3
@@ -18,7 +18,7 @@ Requires:       python-httplib2
 Requires:       python-webob
 
 %description
-This package provides %{vendor} Command Line Interface
+%{srcvendor} Command Line Interface
 
 %prep
 %setup -q -n %{srcname}-%{upstream_version}
@@ -31,6 +31,7 @@ PBR_VERSION="%{version}" SKIP_PIP_INSTALL=1 %{__python2} setup.py install --skip
 
 %files
 %license LICENSE LICENSE.midonet-cli
+%doc README
 %{python2_sitelib}/midonetclient
 %{python2_sitelib}/midonetclient-%{version}-py%{python2_version}.egg-info
 %{_bindir}/midonet-cli
