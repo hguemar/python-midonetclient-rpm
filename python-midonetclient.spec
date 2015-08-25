@@ -30,6 +30,7 @@ PBR_VERSION="%{version}" SKIP_PIP_INSTALL=1 %{__python2} setup.py install --skip
 
 %files
 %license LICENSE
+%doc README
 %{python2_sitelib}/midonetclient
 %{python2_sitelib}/midonetclient-%{version}-py%{python2_version}.egg-info
 %{_bindir}/midonet-cli
