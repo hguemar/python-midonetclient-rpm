@@ -4,8 +4,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{srcname}
-Version:        XXX
-Release:        XXX
+Version:        1.7.0
+Release:        1%{?dist}
 Summary:        %{srcvendor} CLI
 
 # midonet-cli is GPLv3 licensed, the rest ASL 2.0
@@ -24,6 +24,7 @@ Requires:       python-webob
 
 %prep
 %setup -q -n %{name}-%{upstream_version}
+sed -i 's/master/%{version}/' src/midonetclient/__init__.py
 
 %build
 %{__python2} setup.py build
@@ -39,3 +40,6 @@ PBR_VERSION="%{version}" SKIP_PIP_INSTALL=1 %{__python2} setup.py install --skip
 %{_bindir}/midonet-cli
 
 %changelog
+* Tue Mar 29 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 1.7.0-1
+- Upstream 1.7.0 (based on Jaume Devvesa spec file)
+
